@@ -4,13 +4,12 @@ const auth = require("@actions/http-client/lib/auth");
 const uuid = require("uuid");
 
 const mapVariables = (variables, isSecret) => {
-  return variables
-    .split(",")
-    .filter((variable) => variable)
-    .map((variable) => ({
-      value: variable,
-      isSecret,
-    }));
+  // variables format ["key1=value1", "key2=value2"]
+  const variablesArray = JSON.stringify(variables);
+  return variablesArray.map((variable) => ({
+    value: variable,
+    isSecret,
+  }));
 };
 
 const main = async () => {

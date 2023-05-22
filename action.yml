@@ -12,10 +12,10 @@ inputs:
     required: false
     default: "latest"
   env:
-    description: "Environment variables. Format: key1=value1,key2=value2,..."
+    description: "Environment variables. Format: ["key1=value1", "key2=value2", ...]"
     required: false
   secret-env:
-    description: "Secret environment variables. Format: key1=value1,key2=value2,..."
+    description: "Secret environment variables. Format: ["key1=value1", "key2=value2", ...]"
     required: false
 outputs:
   cluster-id:

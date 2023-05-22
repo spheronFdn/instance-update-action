@@ -66,8 +66,8 @@ jobs:
           spheron-token: ${{ secrets.SPHERON_TOKEN }}
           instance-id: ${{ secrets.SPHERON_INSTANCE_ID }}
           tag: ${{ steps.extract-version.outputs.version }}
-          env: "key1=value1,key2=value2"
-          secret-env: "skey1=s1,skey2=s2"
+          env: "[ 'key1=value1', 'key2=value2' ]"
+          secret-env: "[ 'skey1=svalue1', 'skey2=svalue2' ]"
 ```
 
 In the examples we are also using 4 other actions:
@@ -84,8 +84,8 @@ In the examples we are also using 4 other actions:
 - **spheron-token**: To create the `token`, follow the instructions in the [DOCS](https://docs.spheron.network/rest-api/#creating-an-access-token). When you are creating the tokens, please choose **Compute** type in the dashboard.
 - **instance-id**: The ID of the instance that should be updated.
 - **tag( optional )**: The tag that will be used to update the instance. If the tag is not provided, `latest` will be used.
-- **env( optional )**: The environment variables that should be used. The environment variables need to be provided each time the instance is updated. You will be able to see the value of the environment variables in the settings page of your instance.
-- **secret-env( optional )**: The secret environment variables that should be used. The secret environment variables need to be provided each time the instance is updated. You will not be able to see the value of the environment variables in the settings page of your instance.
+- **env( optional )**: The environment variables that should be used. The environment variables need to be provided each time the instance is updated. You will be able to see the value of the environment variables in the settings page of your instance. The value of env is an string that represents an json array where each element in the array is string in format `key=value`.
+- **secret-env( optional )**: The secret environment variables that should be used. The secret environment variables need to be provided each time the instance is updated. You will not be able to see the value of the environment variables in the settings page of your instance. The value of secret env is an string that represents an json array where each element in the array is a string in format `key=value`.
 
 ### Outputs
 
