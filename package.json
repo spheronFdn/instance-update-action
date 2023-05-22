@@ -1,0 +1,28 @@
+{
+  "name": "instance-update-action",
+  "version": "1.0.0",
+  "description": "Github action for updating a spheron cluster instance",
+  "main": "index.js",
+  "keywords": [
+    "Spheron",
+    "Compute",
+    "Github Actions",
+    "Github",
+    "CI/CD"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spheronFdn/instance-update-action.git"
+  },
+  "author": "Spheron Team",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/spheronFdn/instance-update-action/issues"
+  },
+  "homepage": "https://github.com/spheronFdn/instance-update-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/http-client": "^2.1.0",
+    "uuid": "^9.0.0"
+  }
+}
