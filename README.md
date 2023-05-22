@@ -57,7 +57,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: user:app:${{ steps.extract-version.outputs.version }}
+          tags: image:${{ steps.extract-version.outputs.version }}
 
       - name: Update Spheron Instance
         id: update-spheron-instance
