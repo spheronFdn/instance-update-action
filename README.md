@@ -66,8 +66,8 @@ jobs:
           spheron-token: ${{ secrets.SPHERON_TOKEN }}
           instance-id: ${{ secrets.SPHERON_INSTANCE_ID }}
           tag: ${{ steps.extract-version.outputs.version }}
-          env: "[ 'key1=value1', 'key2=value2' ]"
-          secret-env: "[ 'skey1=svalue1', 'skey2=svalue2' ]"
+          env: '[ "key1=value1", "key2=value2" ]'
+          secret-env: '[ "skey1=svalue1", "skey2=svalue2" ]'
 ```
 
 In the examples we are also using 4 other actions:
