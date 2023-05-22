@@ -5,7 +5,7 @@ const uuid = require("uuid");
 
 const mapVariables = (variables, isSecret) => {
   // variables format ["key1=value1", "key2=value2"]
-  const variablesArray = JSON.stringify(variables);
+  const variablesArray = JSON.parse(variables);
   return variablesArray.map((variable) => ({
     value: variable,
     isSecret,
