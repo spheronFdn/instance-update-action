@@ -83,9 +83,9 @@ In the examples we are also using 4 other actions:
 
 - **spheron-token**: To create the `token`, follow the instructions in the [DOCS](https://docs.spheron.network/rest-api/#creating-an-access-token). When you are creating the tokens, please choose **Compute** type in the dashboard.
 - **instance-id**: The ID of the instance that should be updated.
-- **tag**: The tag that will be used to update the instance. If the tag is not provided, `latest` will be used.
-- **env**: The environment variables that should be used. The environment variables need to be provided each time the instance is updated. You will be able to see the value of the environment variables in the settings page of your instance.
-- **secret-env**: The secret environment variables that should be used. The secret environment variables need to be provided each time the instance is updated. You will not be able to see the value of the environment variables in the settings page of your instance.
+- **tag( optional )**: The tag that will be used to update the instance. If the tag is not provided, `latest` will be used.
+- **env( optional )**: The environment variables that should be used. The environment variables need to be provided each time the instance is updated. You will be able to see the value of the environment variables in the settings page of your instance.
+- **secret-env( optional )**: The secret environment variables that should be used. The secret environment variables need to be provided each time the instance is updated. You will not be able to see the value of the environment variables in the settings page of your instance.
 
 ### Outputs
 
