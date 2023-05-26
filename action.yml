@@ -1,0 +1,31 @@
+name: "Update Cluster Instance"
+description: "This github actions provides support for updating the settings of existing cluster instances"
+inputs:
+  spheron-token:
+    description: "A spheron token for the compute organization"
+    required: true
+  instance-id:
+    description: "The id of the cluster instance"
+    required: true
+  tag:
+    description: "The tag of the Docker image to run"
+    required: false
+    default: "latest"
+  env:
+    description: "Environment variables. Format: [ 'key1=value1' , 'key2=value2', ...]"
+    required: false
+  secret-env:
+    description: "Secret environment variables. Format: ['key1=value1', 'key2=value2', ...]"
+    required: false
+outputs:
+  cluster-id:
+    description: "The id of the cluster"
+  instance-id:
+    description: "The id of the cluster instance"
+  order-id:
+    description: "The id of the order"
+  organization-id:
+    description: "The id of the organization"
+runs:
+  using: "node16"
+  main: "index.js"
