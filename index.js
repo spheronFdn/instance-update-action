@@ -46,7 +46,7 @@ const main = async () => {
       tag,
     };
 
-    console.time("Done: ");
+    console.time("Done");
     const updateResponse = await http.patchJson(
       `https://api-v2.spheron.network/v1/cluster-instance/${instanceId}/update`,
       updateRequestBody
@@ -62,11 +62,10 @@ const main = async () => {
     const message = updateResponse.result.message;
 
     console.log("Update instance triggered successfully!");
-    console.timeEnd("Done: ");
+    console.timeEnd("Done");
     console.log(`Status: ${message}`);
-    console.log("Checkout the logs at:");
     console.log(
-      `https://app.spheron.network/#/compute/org/${organizationId}/cluster/${clusterId}/instance/${orderId}/logs`
+      `Checkout the logs at: https://app.spheron.network/#/compute/org/${organizationId}/cluster/${clusterId}/instance/${orderId}/logs`
     );
 
     core.setOutput("cluster-id", clusterId);
