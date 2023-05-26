@@ -1,5 +1,8 @@
 name: "Update Cluster Instance"
 description: "This github actions provides support for updating the settings of existing cluster instances"
+branding:
+  color: "blue"
+  icon: "cloud-rain"
 inputs:
   spheron-token:
     description: "A spheron token for the compute organization"
