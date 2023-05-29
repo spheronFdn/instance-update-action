@@ -61,7 +61,7 @@ jobs:
 
       - name: Update Spheron Instance
         id: update-spheron-instance
-        uses: spheronFdn/instance-update-action@v1.0.1
+        uses: spheronFdn/instance-update-action@v1.0.2
         with:
           spheron-token: ${{ secrets.SPHERON_TOKEN }}
           instance-id: ${{ secrets.SPHERON_INSTANCE_ID }}
@@ -91,5 +91,5 @@ In the examples we are also using 4 other actions:
 
 - **cluster-id**: The Cluster ID of the updated instance.
 - **instance-id**: The ID of the updated instance.
-- **order-id**: The Order ID of the updated instance.
-- **organization-id**: The Organization Id of the updated instance.
+- **deployment-id**: The Deployment ID of the updated instance.
+- **organization-id**: The Organization ID of the updated instance.

@@ -70,7 +70,7 @@ const main = async () => {
 
     core.setOutput("cluster-id", clusterId);
     core.setOutput("instance-id", instanceId);
-    core.setOutput("order-id", orderId);
+    core.setOutput("deployment-id", orderId);
     core.setOutput("organization-id", organizationId);
   } catch (error) {
     core.setFailed(error.message);
