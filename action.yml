@@ -8,7 +8,7 @@ inputs:
     description: "A spheron token for the compute organization"
     required: true
   instance-id:
-    description: "The id of the cluster instance"
+    description: "The ID of the cluster instance"
     required: true
   tag:
     description: "The tag of the Docker image to run"
@@ -22,13 +22,13 @@ inputs:
     required: false
 outputs:
   cluster-id:
-    description: "The id of the cluster"
+    description: "The cluster ID of the updated instance"
   instance-id:
-    description: "The id of the cluster instance"
-  order-id:
-    description: "The id of the order"
+    description: "The updated cluster instance ID"
+  deployment-id:
+    description: "The deployment ID of the updated instance"
   organization-id:
-    description: "The id of the organization"
+    description: "The organization ID of the updated instance"
 runs:
   using: "node16"
   main: "index.js"
