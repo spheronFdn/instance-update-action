@@ -22,13 +22,13 @@ inputs:
     required: false
 outputs:
   cluster-id:
-    description: "The cluster ID of the updated instance"
+    description: "The Cluster ID of the updated instance"
   instance-id:
-    description: "The updated cluster instance ID"
+    description: "The ID of the updated instance"
   deployment-id:
-    description: "The deployment ID of the updated instance"
+    description: "The Deployment ID of the updated instance"
   organization-id:
-    description: "The organization ID of the updated instance"
+    description: "The Organization ID of the updated instance"
 runs:
   using: "node16"
   main: "index.js"
