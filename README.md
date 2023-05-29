@@ -61,7 +61,7 @@ jobs:
 
       - name: Update Spheron Instance
         id: update-spheron-instance
-        uses: spheronFdn/instance-update-action@v1.0.0
+        uses: spheronFdn/instance-update-action@v1.0.1
         with:
           spheron-token: ${{ secrets.SPHERON_TOKEN }}
           instance-id: ${{ secrets.SPHERON_INSTANCE_ID }}

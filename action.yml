@@ -1,4 +1,4 @@
-name: "Update Cluster Instance"
+name: "Instance Update Action"
 description: "Used to update the settings of existing cluster instances"
 branding:
   color: "blue"
