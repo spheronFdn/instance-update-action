@@ -8,7 +8,8 @@
     "Compute",
     "Github Actions",
     "Github",
-    "CI/CD"
+    "CI/CD",
+    "Circle CI"
   ],
   "repository": {
     "type": "git",
