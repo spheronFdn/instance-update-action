@@ -1,23 +1,25 @@
 ## About
 
-Github Action to update the setting of an [Spheron](https://spheron.network/) cluster instance.
+Github Action and  Circle CI configuration to update the setting of an [Spheron](https://spheron.network/) cluster instance.
 
 ---
 
+- [About](#about)
 - [Usage](#usage)
 - [Instance Update Action](#instance-update-action)
   - [Inputs](#inputs)
   - [Outputs](#outputs)
+  - [CircleCI Configuration](#circleci-configuration)
 
 ## Usage
 
-In the examples below we are going to see how we can create a Github workflow which will:
+In the examples below we are going to see how we can create a Github workflow and a CircleCI configuration which will:
 
 1. get the version of the project from `package.json`.
 2. create a new docker image, which uses the version of the project for the image tag.
 3. push the newly created image to the docker hub.
 4. update the spheron instance to use the newly created image.
-
+*GitHub Actions*
 ```yaml
 name: Update Spheron Cluster Instance
 
@@ -70,8 +72,33 @@ jobs:
           secret-env: '[ "skey1=svalue1", "skey2=svalue2" ]'
 ```
 
-In the examples we are also using 4 other actions:
+CircleCI Configuration
+The CircleCI configuration file .circleci/config.yml can be used to achieve a similar workflow:
+```yaml
+version: 2.1
+orbs:
+  node: circleci/node@5.1.0
+jobs:
+  update_spheron_instance:
+    docker:
+      - image: circleci/node:16
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Update Spheron instance
+          command: node index.js
+workflows:
+  version: 2
+  update-spheron-instance:
+    jobs:
+      - update_spheron_instance
 
+```
+Please ensure you replace the placeholders (SPHERON_TOKEN, INSTANCE_ID, TAG, ENV, SECRET_ENV) in both the GitHub Actions and CircleCI configurations with your actual values.
+In the examples we are also using 4 other actions:
+For the Github Actions:
 - [actions/checkout](https://github.com/actions/checkout) action will checkout the repository.
 - [docker/login-action](https://github.com/docker/login-action) action will login to the Docker registry so it's possible to push the image.
 - [docker/setup-buildx-action](https://github.com/docker/setup-buildx-action) action will setup the Docker Buildx.
@@ -93,3 +120,9 @@ In the examples we are also using 4 other actions:
 - **instance-id**: The ID of the updated instance.
 - **deployment-id**: The Deployment ID of the updated instance.
 - **organization-id**: The Organization ID of the updated instance.
+
+### CircleCI Configuration
+
+The CircleCI configuration provided in this repository allows you to trigger a Spheron instance update each time a CircleCI workflow is run. This is done via the provided update_spheron_instance job in the .circleci/config.yml file. The command step in this job runs the index.js script which executes the update.
+
+Please ensure you replace the placeholders (SPHERON_TOKEN, INSTANCE_ID, TAG, ENV, SECRET_ENV) in the CircleCI configuration with your actual values.

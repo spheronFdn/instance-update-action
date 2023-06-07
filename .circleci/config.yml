@@ -1,0 +1,19 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.1.0
+jobs:
+  update_spheron_instance:
+    docker:
+      - image: circleci/node:16
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Update Spheron instance
+          command: node index.js
+workflows:
+  version: 2
+  update-spheron-instance:
+    jobs:
+      - update_spheron_instance
